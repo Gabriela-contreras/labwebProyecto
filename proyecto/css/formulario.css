@@ -1,0 +1,188 @@
+/* .box {
+    background-color:   #101a23;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 800px;
+    color: #FFF;
+}
+
+.inputs {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:  #24303c;
+    opacity: 0.7;
+    width: 50%;
+    height: auto; */
+/*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:  #24303c;
+    opacity: 0.7;
+    width: 50%;
+    height: auto;
+}
+
+.inputForm {
+    padding: 12px;
+    width: 60%;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: 0px;
+}
+
+.select {
+    padding: 12px;
+    width: 60%;
+    border-radius: 50px;
+    margin-top: 15px;
+    border: 0px;
+}
+.textTitle{
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+}
+.descargarForm{
+    margin-bottom: 50px;
+} */
+
+/* chat gpt */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    height: 1000px;
+    margin: 0;
+    width: 100%;
+}
+
+.box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.textTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.inputForm,
+.select {
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.inputForm:focus,
+.select:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066cc;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004d99;
+}
+
+.descargarForm {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.descargarForm:hover {
+    color: #004d99;
+}
+
+p {
+    margin: 10px 0;
+    color: #666;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* boton whasapp*/
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.float:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: #fff;
+}
+
+.my-float {
+    margin-top: 16px;
+}
+
+.divFecha{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}

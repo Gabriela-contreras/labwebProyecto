@@ -1,0 +1,205 @@
+/* soy el css de login */
+
+.box {
+    width: 100%;
+    height: 100%;
+    /* background-color: #120968; */
+
+}
+
+.title {
+    color: #fff;
+    font-size: 55px;
+    font-weight: 600;
+    view-timeline-name: --logo;
+    view-timeline-axis: block;
+    animation-timeline: --logo;
+    animation-name: show;
+
+}
+
+.txtmediano {
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    width: 50%;
+    animation-name: show;
+}
+
+.imgTop {
+    width: 100%;
+    background-image: url(../img.p/fotomujer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: right;
+    background-color: rgb(57, 53, 53);
+
+}
+
+.imgMenu {
+    margin-left: 10px;
+
+}
+
+body {
+
+    background-color: #000;
+}
+
+.imagenLogin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: 600px;
+    margin-top: 50px;
+}
+
+.imglogin {
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+    margin: 25px;
+    margin-top: 0px;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+
+
+}
+
+
+.boxlogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* // lo que hace view-timeline: --logo; es que se ejecute la animacion
+    //view-timeline-name: --logo; crea una animacion
+   // view-timeline-axis: block; es el eje de la animacion  */
+    
+    view-timeline-name: --logo;
+    view-timeline-axis: block;
+    animation-timeline: --logo;
+    animation-name: show;
+}
+
+.imglogo {
+    border-radius: 100px;
+    width: 100px;
+}
+
+.textlogos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: antiquewhite;
+}
+
+
+
+#subfooter {
+    height: 500px;
+    margin-top: 30px;
+
+}
+
+.imgSubF1 {
+    position: relative;
+    height: 250px;
+    width: 250px;
+    margin-right: 60px;
+}
+
+#boxsubf1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    left: 500px;
+    top: 2095px;
+
+}
+
+.imgSubF2 {
+    position: absolute;
+    left: 1000px;
+    top: 1650px;
+    height: 400px;
+    width: 400px;
+
+}
+
+.imgSubF3 {
+    position: absolute;
+    left: 50px;
+    top: 1900px;
+    height: 450px;
+    width: 500px;
+
+}
+
+#actividades {
+    height: auto;
+
+}
+
+
+/* boton whasapp*/
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.float:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: #fff;
+}
+
+.my-float {
+    margin-top: 16px;
+}

@@ -1,0 +1,42 @@
+.footer{
+    background-color: #000000;
+    opacity: 0.9;
+    height: 100px;
+    width: 99%;
+    display: flex;
+    position: absolute;
+    top: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+
+}
+
+h2{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 400;
+    padding-left: 30px;
+}
+
+.bi-instagram{
+    font-size: 30px;
+    color: #fff;
+}
+
+.bi-facebook{
+    font-size: 30px;
+    color: #fff;
+}
+.redSocial{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+.divRedes{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
