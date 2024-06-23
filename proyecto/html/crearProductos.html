@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/formulario.css">
+    <link rel="stylesheet" href="../css/crearProductos.css">
+    <title>Complejo Center</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="center">
+        <div class="box">
+            <div class="inputs">
+                <p class="textTitle">Crear nuevo producto</p class="textTitle">
+
+                <input type="text" placeholder="ID unico" class="inputForm" id="id">
+                <input type="text" placeholder="Titulo" class="inputForm" id="titulo">
+                <input type="text" placeholder="URL de imagen" class="inputForm" id="imagen">
+                <select name="" id="deporte" class="select">
+                    <option value="">Seleccione una actividad </option>
+                    <option value="Gimnasio">Gimnasio </option>
+                    <option value="Crossfit">Crossfit </option>
+                    <option value="Kick Boxing">Kick Boxing </option>
+                    <option value="Clases Natacion">Clases Natacion </option>
+                    <option value=" Matronatacion">Matronatacion </option>
+                    <option value="Clases Padel">Clases Padel </option>
+                    <option value="Clases Futbol">Clases Futbol </option>
+                </select>
+                <input type="text" placeholder="Categoria" class="inputForm" id="dni">
+                <input type="number" placeholder="Precio" class="inputForm margin-bottom-30" id="telefono">
+                <button onclick="validar()">enviar</button>
+            </div>
+        </div>
+
+        <!-- icono y boton whatsapp -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <a href="https://api.whatsapp.com/send?phone=5474724&text=Hola!%20Quisiera%20hacer%20una%20consulta"
+            class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+    </div>
+    <div id="footer"></div>
+    <script src="../js/menu.js"></script>
+    <script src="../js/crearProductos.js"></script>
+</body>
+
+
+</html>
