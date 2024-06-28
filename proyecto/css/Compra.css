@@ -1,6 +1,3 @@
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -36,16 +33,16 @@ a {
     padding-top: 60px;
 }
 
-body{
+body {
     background-color: #000;
 
 }
+/*contenido barra lateral */
 aside {
     padding: 2rem;
     padding-right: 0;
     color: #FFF;
     height: 100vh;
-    position: sticky;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -55,10 +52,10 @@ aside {
 
 .logo {
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 30px;
 }
 
-.boton-menu{
+.boton-menu {
     background-color: transparent;
     border: 0;
     color: #FFF;
@@ -69,7 +66,8 @@ aside {
     font-weight: 600;
     padding: 1rem;
 }
-.boton-menu.active{
+
+.boton-menu.active {
     background-color: #FFF;
     color: #4b33a8;
     width: 100%;
@@ -77,20 +75,22 @@ aside {
     border-bottom-left-radius: 1rem;
     position: relative;
 }
- /* creo el borde del boton active  */
-.boton-menu.active::before{
-content: '';
-position: absolute;
-width: 1rem;
-height: 2rem;
-bottom: 100%;
-right: 0;
-border-bottom-right-radius: .5rem;
-box-shadow: 0 1rem 0 #FFF;
+
+/* creo el borde del boton active  */
+/*aca con el botom creo el borde de abajo*/
+.boton-menu.active::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0 1rem 0 #FFF;
 }
 
 
-.boton-menu.active::after{
+.boton-menu.active::after {
     content: '';
     position: absolute;
     width: 1rem;
@@ -99,29 +99,32 @@ box-shadow: 0 1rem 0 #FFF;
     right: 0;
     border-top-right-radius: .5rem;
     box-shadow: 0 -1rem 0 #FFF;
-    }
+}
 
-.menu{
+.menu {
     display: flex;
     flex-direction: column;
     gap: .5rem;
 }
+
 /*son los iconos */
-.bi-hand-index-fill, .bi-hand-index{
+.bi-hand-index-fill,
+.bi-hand-index {
     transform: rotateZ(90deg);
 
 }
 
-.boton-carrito{
+.boton-carrito {
     margin-top: 2rem;
 }
 
 
 .texto-footer {
     color: #785ce9;
-    font-size:20px;
+    font-size: 20px;
 }
 
+/*contenido shop*/
 main {
     background-color: #FFF;
     margin: 1rem;
@@ -133,7 +136,7 @@ main {
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
@@ -142,23 +145,20 @@ main {
     margin-bottom: 2rem;
 }
 
-.contenedor-productos {
-display: flex;
-flex-direction: column;
 
-}
 
 .producto-img {
     border-radius: 1rem;
     width: 300px;
 }
 
+/*detalles de producto */
 .producto-detalles {
     background-color: #000;
     color: #b4acac;
     padding: 0.5rem;
     border-radius: 1rem;
-  /* //margin top -2rem para que se superponga con la imagen  */
+    /* //margin top -2rem para que se superponga con la imagen  */
     margin-top: -2rem;
     position: relative;
     display: flex;
@@ -173,6 +173,8 @@ flex-direction: column;
     color: #FFF;
 
 }
+
+/*boton agregar */
 
 .producto-Agregar {
     padding: 8px;
@@ -214,7 +216,8 @@ flex-direction: column;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e2e2e2;;
+    background-color: #e2e2e2;
+    ;
     color: #4b33a8;
     padding: .5rem;
     padding-right: 1.5rem;
@@ -242,17 +245,18 @@ flex-direction: column;
     display: flex;
     justify-content: space-between;
 }
-.carrito-img{
+
+.carrito-img {
     width: 200px;
     height: 200px;
 }
 
 .carrito-acciones-vaciar {
     border: 0;
-    background-color:  #e2e2e2;
+    background-color: #e2e2e2;
     padding: 1rem;
     border-radius: 1rem;
-    color:#4b33a8;
+    color: #4b33a8;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -263,7 +267,7 @@ flex-direction: column;
 
 .carrito-acciones-total {
     display: flex;
-    background-color:  #e2e2e2;
+    background-color: #e2e2e2;
     padding: 1rem;
     color: #4b33a8;
     text-transform: uppercase;

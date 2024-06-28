@@ -1,14 +1,12 @@
-// productos
-// creo un array de objetos con los productos del carrito
-const productos = [
+const productosIniciales = [
     // Natacion
     {
         id: "Natacion-01",
         titulo: "Antiparra + gorro",
         imagen: "../img.p/antiparraPn.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Natacion",
+            id: "natacion"
         },
         precio: 10000
     },
@@ -17,8 +15,8 @@ const productos = [
         titulo: "Malla Hombre",
         imagen: "../img.p/mallahombrePn.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Natacion",
+            id: "natacion"
         },
         precio: 15000
     },
@@ -27,8 +25,8 @@ const productos = [
         titulo: "Malla Mujer",
         imagen: "../img.p/MallamujerPN.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Natacion",
+            id: "natacion"
         },
         precio: 20000
     },
@@ -37,8 +35,8 @@ const productos = [
         titulo: "Bolso Natacion",
         imagen: "../img.p/bolsoPn.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Natacion",
+            id: "natacion"
         },
         precio: 15000
     },
@@ -50,8 +48,8 @@ const productos = [
         titulo: "Campera Hombre",
         imagen: "../img.p/CamperaHombrePg.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Gimnasio",
+            id: "gimnasio"
         },
         precio: 80000
     },
@@ -60,8 +58,8 @@ const productos = [
         titulo: "Conjunto deportivo mujer",
         imagen: "../img.p/conjunto deportivo mujer.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Gimnasio",
+            id: "gimnasio"
         },
         precio: 40000
     },
@@ -70,8 +68,8 @@ const productos = [
         titulo: "Remera Hombre",
         imagen: "../img.p/remeraPG.webp",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Gimnasio",
+            id: "gimnasio"
         },
         precio: 6000
     },
@@ -80,8 +78,8 @@ const productos = [
         titulo: "Pantalon Hombre",
         imagen: "../img.p/pantalonHombrePG.webp",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Gimnasio",
+            id: "gimnasio"
         },
         precio: 25000
     },
@@ -90,8 +88,8 @@ const productos = [
         titulo: "Campera mujer",
         imagen: "../img.p/CamperamujerPg.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Gimnasio",
+            id: "gimnasio"
         },
         precio: 70000
     },
@@ -102,8 +100,8 @@ const productos = [
         titulo: "Paleta",
         imagen: "../img.p/paletaPp.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Padel",
+            id: "padel"
         },
         precio: 35000
     },
@@ -112,8 +110,8 @@ const productos = [
         titulo: "Paleta",
         imagen: "../img.p/paletaPp.webp",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Padel",
+            id: "padel"
         },
         precio: 40000
     },
@@ -122,8 +120,8 @@ const productos = [
         titulo: "Pelotas padel 3",
         imagen: "../img.p/PelotasPadelPp.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Padel",
+            id: "padel"
         },
         precio: 20000
     },
@@ -132,20 +130,30 @@ const productos = [
         titulo: "Bolso de  Paleta Padel",
         imagen: "../img.p/bolsoPadel.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Padel",
+            id: "padel"
         },
         precio: 60000
     }
-
 ];
+
+let productos = localStorage.getItem("productos");
+//En caso que no haya productos creados, se crean los productos iniciales
+if(productos){
+    productos = JSON.parse(productos);
+}
+else {
+    productos = productosIniciales
+}
+
+
 // llamamos los id o clases del DOM html
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal = document.querySelector("#titulo-principal");
 let botonesAgregar = document.querySelectorAll(".producto-Agregar");
 const numerito = document.querySelector("#numerito");
-// traigo los productos del local storage
+// traigo los productos del local storage de carrito.
 let productosEnCarrito = localStorage.getItem("productos-en-carrito");
 
 if (productosEnCarrito) {
@@ -211,8 +219,10 @@ function buttonActive() {
 
         })
     });
+    
     cargarProductos(productos);
 }
+
 // funcion para actualizar los botones de agregar
 function actualizarProductosAgregar() {
     //guardo en una variable todos los botones de agregar
@@ -228,7 +238,6 @@ function actualizarProductosAgregar() {
 function agregarAlCarrito(e) {
 
     const idBoton = e.currentTarget.id;
-    //busco el producto que tiene el id del boton y lo guardo en una variable constante
     const productoAgregado = productos.find(producto => producto.id === idBoton);
     // si el producto ya esta en el carrito le sumo uno a la cantidad
     if (productosEnCarrito.some(producto => producto.id === idBoton)) {

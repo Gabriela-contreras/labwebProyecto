@@ -14,7 +14,9 @@ const header = `<div id="menu">
         <img src="../img.p/logoCenter.jpg" alt="" class="imglogo">
 
         <ul>
-            <li><a href="../html/login.html">Inicio</a></li>
+            <li><a href="../html/index.html">Inicio</a></li>
+            <li><a href="../html/login.html">Ingresar</a></li>
+
             <li>
                 <a href="../html/Compra.html">Shop</a>
             </li>

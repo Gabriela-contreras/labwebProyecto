@@ -1,5 +1,6 @@
 let productosEnCarrito = localStorage.getItem("productos-en-carrito");
 productosEnCarrito = JSON.parse(productosEnCarrito);
+
 // creo variables y constantes para los elementos del carrito las llamo del dom y las guardo en variables
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoProductos = document.querySelector("#carrito-productos");
@@ -68,7 +69,6 @@ cargarProductosCarrito();
 
 //funcion para actualizar los botones de eliminar , que elimina productos del carrito
 function actualizarBotonesEliminar() {
-    //guardo en una variable todos los botones de eliminar
     botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
     //recorro los botones y les agrego un evento click
     botonesEliminar.forEach(boton => {
@@ -76,19 +76,23 @@ function actualizarBotonesEliminar() {
         boton.addEventListener("click", eliminarDelCarrito);
     });
 }
+
+
 //funcion para eliminar un producto del carrito
 function eliminarDelCarrito(e) {
     // el currentTarget es el elemento que disparo el evento y el id es el id del elemento
-    //osea que cuando hago click en el boton de eliminar el currentTarget es el boton y el id es el id del boton
     const idBoton = e.currentTarget.id;
     const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
-    //
+    
     productosEnCarrito.splice(index, 1);
-    cargarProductosCarrito();
     //guardo en el local storage los productos en el carrito
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    cargarProductosCarrito();
+
 
 }
+
+
 botonVaciar.addEventListener("click", vaciarCarrito);
 //funcion para vaciar el carrito
 function vaciarCarrito() {
@@ -115,6 +119,7 @@ function comprarCarrito() {
     productosEnCarrito.length = 0;
     //guardo en el local storage los productos en el carrito
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
     //actualizo los productos en el carrito
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");

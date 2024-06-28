@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/formulario.css">
-    <link rel="stylesheet" href="../css/crearProductos.css">
-    <title>Complejo Center</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Crear producto</title>
 </head>
 
 <body>
@@ -19,19 +19,14 @@
                 <input type="text" placeholder="ID unico" class="inputForm" id="id">
                 <input type="text" placeholder="Titulo" class="inputForm" id="titulo">
                 <input type="text" placeholder="URL de imagen" class="inputForm" id="imagen">
-                <select name="" id="deporte" class="select">
-                    <option value="">Seleccione una actividad </option>
-                    <option value="Gimnasio">Gimnasio </option>
-                    <option value="Crossfit">Crossfit </option>
-                    <option value="Kick Boxing">Kick Boxing </option>
-                    <option value="Clases Natacion">Clases Natacion </option>
-                    <option value=" Matronatacion">Matronatacion </option>
-                    <option value="Clases Padel">Clases Padel </option>
-                    <option value="Clases Futbol">Clases Futbol </option>
+                <input type="number" placeholder="Precio" class="inputForm" id="pricing">
+                <select name="" id="categoria" class="select margin-bottom-30">
+                    <option value="">Seleccione una categoría </option>
+                    <option value="natacion">Natacion </option>
+                    <option value="gimnasio">Gimnasio </option>
+                    <option value="padel">Padel</option>
                 </select>
-                <input type="text" placeholder="Categoria" class="inputForm" id="dni">
-                <input type="number" placeholder="Precio" class="inputForm margin-bottom-30" id="telefono">
-                <button onclick="validar()">enviar</button>
+                <button onclick="validar()">Crear</button>
             </div>
         </div>
 

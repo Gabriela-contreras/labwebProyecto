@@ -1,8 +1,8 @@
 
 function validar() {
     console.log("Formulario cargado");
-    
-//obtengo los valores de los input
+
+    //obtengo los valores de los input
     let nombre = document.getElementById('nombre').value;
     let apellido = document.getElementById('apellido').value;
     let email = document.getElementById('email').value;
@@ -13,6 +13,7 @@ function validar() {
     let dia = document.getElementById('dia').value;
     let mes = document.getElementById('mes').value;
     let anio = document.getElementById('anio').value;
+    let altura = document.getElementById('altura').value;
 
     //llamo  las funciones creadas  para validar los campos 
 
@@ -24,13 +25,14 @@ function validar() {
     let dniVal = validarDni(dni);
     let telVal = validarTelefono(telefono);
     let direccionVal = validarDireccion(direccion);
-    const fechaVal = validarFecha(dia, mes, anio);
+    validarFecha(dia, mes, anio);
+    validarAltura(altura)
 
-    console.log(datos);
     //si los datos son validos y los campos estan completos guardo los datos en el localstorage
-    if (datos && apellidoVal && nombreVal && emailVal && dniVal && telVal && direccionVal && fechaVal) {
+    if (datos && apellidoVal && nombreVal && emailVal && dniVal && telVal && direccionVal) {
         guardarDatos({ nombre, apellido, email, direccion, telefono, dni, deporte });
         alert("Formulario enviado correctamente");
+        limpiarFormulario();
     }
 
 }
@@ -58,10 +60,12 @@ function validarApellido(apellido) {
     let esValido = true;
     //guardo input de apellido para desp poder pintalo de colores 
     let input = document.getElementById("apellido");
-    //comparo que no este mal escrito
+    //comparo que no este mal escrito 
+
     if (isNaN(apellido)) {
         input.style.backgroundColor = "#74ef7a40";
         input.style.border = "none";
+        esValido = true;
     } else if (!isNaN(apellido)) {
         input.style.backgroundColor = "#ff002030"
         esValido = false;
@@ -105,7 +109,6 @@ function validarFecha(dia, mes, anio) {
     let numMes = parseInt(mes);
     let numDia = parseInt(dia);
 
-    console.log(diasPorMes)
 
     // diasPorMes.forEach(day => {
 
@@ -144,7 +147,7 @@ function validarFecha(dia, mes, anio) {
     const mesIgual = mesActual === numMes
     //comparo si el dia actual es menor al dia ingresado
     const fechaMayor = FechaActual.getDate() < numDia
-    //si el anio es mayor al actual o el mes es mayor al actual o el mes es igual al actual y el dia es mayor al actual
+    //si el dia es mayor al actual 
     const mayorADia = fechaMayor || mayorAMes || mesIgual && FechaActual.getDate() < numDia;
     if (anioActual && (mayorAMes || mesIgual) && mayorADia) {
         //si la fecha es mayor a la actual pinto de rojo
@@ -157,10 +160,13 @@ function validarFecha(dia, mes, anio) {
     return esValido;
 }
 
+
+
 function validarDni(dni) {
     let esValido = true;
     let inputDni = document.getElementById("dni");
-    if (dni.length == 8 && !isNaN(dni) && dni != 0) {
+    let dniNum = parseInt(dni);
+    if (dni.length == 8 && Number.isInteger(dniNum)) {
         inputDni.style.backgroundColor = "#74ef7a40";
         inputDni.style.border = "none";
     } else {
@@ -169,6 +175,9 @@ function validarDni(dni) {
     }
     return esValido;
 }
+
+
+
 
 
 function validarDireccion(direccion) {
@@ -184,11 +193,25 @@ function validarDireccion(direccion) {
     return esValido;
 }
 
+function validarAltura(altura) {
+    let inputAltura = document.getElementById("altura");
+    if (!isNaN(altura) && altura !== "") {
+        inputAltura.style.backgroundColor = "#74ef7a40";
+        inputAltura.style.border = "none";
+    } else if (altura == "") {
+        inputAltura.style.backgroundColor = "#ff002030";
+        esValido = false;
+    }
+
+
+
+}
 
 function validarTelefono(telefono) {
     let esValido = true;
     let inputTelefono = document.getElementById("telefono");
-    if (telefono.length > 9 && telefono.length < 12) {
+    let numTel = parseInt(telefono);
+    if (telefono.length > 9 && telefono.length < 12 && Number.isInteger(numTel)) {
         inputTelefono.style.backgroundColor = "#74ef7a40";
         inputTelefono.style.border = "none";
     } else {
@@ -252,4 +275,85 @@ function datosObligatorios() {
 
 function guardarDatos(data) {
     localStorage.setItem("formulario", JSON.stringify(data));
+}
+
+
+function limpiarFormulario() {
+    let nombre = document.getElementById('nombre');
+    let nombreValor = document.getElementById('nombre').value;
+
+    let apellidoValor = document.getElementById('apellido').value;
+    let apellido = document.getElementById('apellido');
+
+    let emailValor = document.getElementById('email').value;
+    let email = document.getElementById('email');
+
+    let direccionValor = document.getElementById('direccion').value;
+    let direccion = document.getElementById('direccion');
+
+    let telefonoValor = document.getElementById('telefono').value;
+    let telefono = document.getElementById('telefono');
+
+    let dniValor = document.getElementById('dni').value;
+    let dni = document.getElementById('dni');
+
+    let deporteValor = document.getElementById('deporte').value;
+    let deporte = document.getElementById('deporte');
+
+    let diaValor = document.getElementById('dia').value;
+    let dia = document.getElementById('dia');
+
+    let mesValor = document.getElementById('mes').value;
+    let mes = document.getElementById('mes');
+
+    let anioValor = document.getElementById('anio').value;
+    let anio = document.getElementById('anio');
+
+    let alturaValor = document.getElementById('altura').value;
+    let altura = document.getElementById('altura');
+
+    nombreValor = ""
+    nombre.style.border = "1px solid #ddd"
+    nombre.style.backgroundColor = "#fff";
+
+    apellidoValor = ""
+    apellido.style.border = "1px solid #ddd"
+    apellido.style.backgroundColor = "#fff";
+
+    emailValor = ""
+    email.style.border = "1px solid #ddd"
+    email.style.backgroundColor = "#fff";
+
+
+    direccionValor = ""
+    direccion.style.border = "1px solid #ddd"
+    direccion.style.backgroundColor = "#fff";
+
+    telefonoValor = ""
+    telefono.style.border = "1px solid #ddd"
+    telefono.style.backgroundColor = "#fff";
+
+    dniValor = ""
+    dni.style.border = "1px solid #ddd"
+    dni.style.backgroundColor = "#fff";
+
+    deporteValor = ""
+    deporte.style.border = "1px solid #ddd"
+    deporte.style.backgroundColor = "#fff";
+
+    diaValor = ""
+    dia.style.border = "1px solid #ddd"
+    dia.style.backgroundColor = "#fff";
+
+    mesValor = ""
+    mes.style.border = "1px solid #ddd"
+    mes.style.backgroundColor = "#fff";
+
+    anioValor = ""
+    anio.style.border = "1px solid #ddd"
+    anio.style.backgroundColor = "#fff";
+
+    alturaValor = ""
+    altura.style.border = "1px solid #ddd"
+    altura.style.backgroundColor = "#fff";
 }

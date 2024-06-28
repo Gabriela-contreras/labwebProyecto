@@ -1,5 +1,3 @@
-/* soy el css de login */
-
 .box {
     width: 100%;
     height: 100%;
@@ -11,10 +9,26 @@
     color: #fff;
     font-size: 55px;
     font-weight: 600;
+    /*nombra la animacion */
     view-timeline-name: --logo;
+    /*direcciona la animacion en bloque */
     view-timeline-axis: block;
     animation-timeline: --logo;
+    /*especifica el nombre de la animacion */
     animation-name: show;
+
+}
+/*creo la animacion show y le doy estilos iniciales y finales */
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
 
 }
 
@@ -58,6 +72,7 @@
 body {
 
     background-color: #000;
+    overflow-x: hidden;
 }
 
 .imagenLogin {
@@ -78,18 +93,7 @@ body {
     margin-top: 0px;
 }
 
-@keyframes show {
-    from {
-        opacity: 0;
-        scale: 25%;
-    }
 
-    to {
-        opacity: 1;
-        scale: 100%;
-    }
-
-}
 
 .logos {
     display: flex;
@@ -110,7 +114,7 @@ body {
     /* // lo que hace view-timeline: --logo; es que se ejecute la animacion
     //view-timeline-name: --logo; crea una animacion
    // view-timeline-axis: block; es el eje de la animacion  */
-    
+
     view-timeline-name: --logo;
     view-timeline-axis: block;
     animation-timeline: --logo;

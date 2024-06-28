@@ -11,7 +11,7 @@
 }
 
 body {
-
+    overflow-x: hidden;
     background-color: #000;
 
 }
@@ -47,18 +47,13 @@ body {
     top: 500px;
     left: 80px;
     margin: 0%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    perspective: 1000px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 
 
-    :hover {
-        transform: rotateY(180deg);
-    }
+
 
 
 
@@ -88,12 +83,18 @@ body {
     width: 300px;
     height: 400px;
     text-align: center;
-/**/
-    transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+    /*hago una transformacion  */
     transform-style: preserve-3d;
-
+    backface-visibility: visible;
+    perspective: 10rem;
+    transition: transform 1s ease-in-out;
 
 }
+
+.boxCard:hover {
+    transform: rotateY(180deg);
+}
+
 /*para que el texto no se de vuelta */
 .boxClases p {
     transform: rotateY(0deg) !important;
@@ -105,7 +106,6 @@ body {
     width: 100%;
     height: 100%;
     /*para que se vea el contenido del box*/
-    backface-visibility: hidden;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
@@ -116,19 +116,23 @@ body {
     color: #faebd7;
     /*rotate en y */
     transform: rotateY(180deg);
+    backface-visibility: hidden;
     text-align: center;
     cursor: pointer;
 }
 
-.dorso p{
-    font-size: 18px;
+.dorso p {
+    font-size: 20px;
     font-weight: 400;
     text-align: center;
     padding: 5px;
 }
+
 .frente {
     background-color: #4b33a8;
     color: #FFF;
+
+
 }
 
 
@@ -144,8 +148,6 @@ body {
 
 .textTitleGym {
     color: #292929;
-    /* background-color: black; */
-    /* width: 200px; */
     display: flex;
 
 
@@ -190,12 +192,12 @@ body {
 }
 
 p {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
 }
 
 .list {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
 }
 
